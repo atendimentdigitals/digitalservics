@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Maria Eduarda Cotta · Estética & Beleza</title>
+    <!-- SEO básico -->
+    <meta name="description" content="Atividades de estética e cuidados com a beleza. CNPJ 64.701.645/0001-34. Profissionalismo e bem-estar no Rio de Janeiro.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://seudominio.com.br">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafafa;
+            color: #1e1e2a;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* --- aviso privado --- */
+        .top-badge {
+            background: #0b2b1f;
+            color: #e6f7ef;
+            text-align: center;
+            padding: 10px 16px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid #2a5e44;
+        }
+        .top-badge i {
+            margin-right: 8px;
+            color: #8bc34a;
+        }
+        .top-badge strong {
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        /* --- header / nome empresa --- */
+        .navbar {
+            background: #ffffff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            padding: 16px 0;
+            border-bottom: 1px solid #eef2f0;
+        }
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .brand {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0f3d2b;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .brand small {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #3e6b55;
+            display: block;
+            margin-top: 2px;
+        }
+        .brand i {
+            color: #2a7a4f;
+            margin-right: 6px;
+        }
+
+        /* --- hero --- */
+        .hero {
+            background: url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1888&auto=format&fit=crop') center center/cover no-repeat;
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            width: 100%;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 25, 20, 0.7);
+            backdrop-filter: brightness(0.9);
+        }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+
+        .hero-content {
+            flex: 1 1 48%;
+            color: #f3faf5;
+        }
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .hero-content h1 span {
+            color: #b5e6b5;
+        }
+        .hero-sub {
+            font-size: 1.2rem;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 28px;
+            max-width: 550px;
+        }
+        .check-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+        .check-list li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .check-list i {
+            color: #8bc34a;
+            font-size: 1.3rem;
+            width: 24px;
+            text-align: center;
+        }
+        .btn-primary {
+            background: #1e7b4a;
+            border: none;
+            color: white;
+            font-weight: 600;
+            padding: 16px 40px;
+            border-radius: 60px;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 24px rgba(26, 115, 70, 0.3);
+            transition: all 0.2s ease;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid #2d8f5a;
+        }
+        .btn-primary:hover {
+            background: #14683e;
+            transform: scale(1.02);
+            box-shadow: 0 12px 28px rgba(20, 90, 50, 0.4);
+        }
+
+        /* form */
+        .hero-form {
+            flex: 1 1 40%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(6px);
+            padding: 36px 32px;
+            border-radius: 32px;
+            box-shadow: 0 30px 60px rgba(0,20,10,0.4);
+            border: 1px solid rgba(255,255,255,0.2);
+            color: #1a2e24;
+        }
+        .hero-form h3 {
+            font-weight: 700;
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            color: #0b2f1e;
+        }
+        .hero-form p {
+            color: #2a4a3a;
+            margin-bottom: 24px;
+            font-size: 0.95rem;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 500;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: #1d3b2d;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 18px;
+            border: 1px solid #d9e3dd;
+            font-size: 1rem;
+            background: white;
+            transition: 0.15s;
+        }
+        .form-group input:focus {
+            outline: 2px solid #1e7b4a;
+            border-color: transparent;
+        }
+        .btn-submit {
+            background: #0f3d2b;
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 60px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 6px;
+            transition: 0.2s;
+            box-shadow: 0 6px 16px rgba(15, 61, 43, 0.25);
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background: #1b5a3e;
+            transform: scale(1.01);
+        }
+
+        /* seções comuns */
+        .section {
+            padding: 80px 0;
+        }
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #0b2b1d;
+            letter-spacing: -0.02em;
+        }
+        .section-sub {
+            font-size: 1.1rem;
+            color: #3e5f4e;
+            max-width: 700px;
+            margin-bottom: 48px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 32px;
+        }
+        .card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 28px;
+            box-shadow: 0 8px 30px rgba(0,20,10,0.06);
+            border: 1px solid #edf3ef;
+            transition: 0.2s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,30,18,0.08);
+        }
+        .card-icon {
+            font-size: 2.8rem;
+            color: #1e7b4a;
+            margin-bottom: 18px;
+            background: #e7f3eb;
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card h4 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #3d5b4b;
+            font-size: 0.95rem;
+        }
+        .card .btn-outline {
+            margin-top: 20px;
+            background: transparent;
+            border: 1.5px solid #1e7b4a;
+            color: #1e7b4a;
+            padding: 10px 28px;
+            border-radius: 60px;
+            font-weight: 600;
+            display: inline-block;
+            transition: 0.15s;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .card .btn-outline:hover {
+            background: #1e7b4a;
+            color: white;
+        }
+
+        /* rodapé */
+        .footer {
+            background: #0b221a;
+            color: #c6d9cf;
+            padding: 48px 0 24px;
+            border-top: 2px solid #1b4d36;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 32px;
+        }
+        .footer h5 {
+            color: #e9f3ed;
+            font-weight: 700;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            letter-spacing: 0.3px;
+        }
+        .footer p, .footer li {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            list-style: none;
+        }
+        .footer a {
+            color: #b0cdbc;
+            text-decoration: none;
+            border-bottom: 1px dotted transparent;
+        }
+        .footer a:hover {
+            color: white;
+            border-bottom-color: #7ba78b;
+        }
+        .footer-divider {
+            border-top: 1px solid #2d4d3b;
+            padding-top: 24px;
+            margin-top: 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+        .footer small {
+            opacity: 0.8;
+        }
+        .footer i {
+            margin-right: 6px;
+            color: #7da88b;
+        }
+
+        /* responsivo */
+        @media (max-width: 920px) {
+            .hero .container {
+                flex-direction: column;
+            }
+            .hero-content, .hero-form {
+                flex: 1 1 100%;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .hero-form {
+                padding: 28px 20px;
+            }
+            .brand {
+                font-size: 1.3rem;
+            }
+        }
+        @media (max-width: 550px) {
+            .section {
+                padding: 50px 0;
+            }
+            .grid-3 {
+                gap: 20px;
+            }
+            .hero {
+                min-height: 70vh;
+            }
+        }
+        /* imagem ilustrativa adicional (decorativa) */
+        .img-illustration {
+            background: url('https://images.unsplash.com/photo-1580618672591-eb180b1a973f?q=80&w=1887&auto=format&fit=crop') center/cover no-repeat;
+            height: 180px;
+            border-radius: 24px;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- AVISO PRIVADO TOPO -->
+<div class="top-badge">
+    <i class="fas fa-building"></i> <strong>EMPRESA PRIVADA</strong> · Atividades de estética e cuidados com a beleza · CNPJ 64.701.645/0001-34
+</div>
+
+<!-- NAVBAR -->
+<header class="navbar">
+    <div class="container">
+        <div class="brand">
+            <i class="fas fa-spa"></i> Maria Eduarda Cotta
+            <small>64.701.645 Maria Eduarda Cotta da Silva Monteiro Marques</small>
+        </div>
+        <div style="font-weight: 500; color: #1f553b; background: #eaf5ee; padding: 6px 18px; border-radius: 60px; font-size: 0.85rem;">
+            <i class="fas fa-check-circle" style="color:#1e7b4a;"></i> Ativa
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Beleza que <span>transforma</span> <br>com cuidado e excelência</h1>
+            <p class="hero-sub">Atividades de estética e outros serviços de cuidados com a beleza. Profissionalismo, bem-estar e resultados que realçam sua autoestima.</p>
+            <ul class="check-list">
+                <li><i class="fas fa-check-circle"></i> Atendimento personalizado</li>
+                <li><i class="fas fa-check-circle"></i> Técnicas modernas e seguras</li>
+                <li><i class="fas fa-check-circle"></i> Ambiente acolhedor e privativo</li>
+            </ul>
+            <a href="#" class="btn-primary"><i class="fas fa-calendar-check"></i> Agende sua avaliação</a>
+        </div>
+
+        <!-- FORMULÁRIO LADO DIREITO -->
+        <div class="hero-form">
+            <h3><i class="fas fa-envelope" style="color: #1e7b4a;"></i> Fale conosco</h3>
+            <p>Preencha e receba um contato rápido.</p>
+            <form>
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Nome completo</label>
+                    <input type="text" placeholder="Seu nome" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-phone-alt"></i> Telefone</label>
+                    <input type="tel" placeholder="(21) 99999-9999" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-envelope"></i> E-mail</label>
+                    <input type="email" placeholder="seu@email.com" required>
+                </div>
+                <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Quero mais informações</button>
+            </form>
+            <p style="font-size: 0.75rem; margin-top: 14px; color: #3b5f4b;"><i class="fas fa-lock"></i> Dados protegidos · resposta rápida</p>
+        </div>
+    </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-title">✨ Como funciona</h2>
+        <p class="section-sub">Processo simples e transparente para você viver uma experiência única de beleza e bem-estar.</p>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-calendar-day"></i></div>
+                <h4>1. Agendamento</h4>
+                <p>Escolha o melhor dia e horário pelo formulário ou WhatsApp. Atendimento ágil e sem burocracia.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-hand-sparkles"></i></div>
+                <h4>2. Avaliação</h4>
+                <p>Análise personalizada das suas necessidades, com protocolos exclusivos para cada cliente.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-star"></i></div>
+                <h4>3. Resultado</h4>
+                <p>Procedimentos com foco em bem-estar, realçando sua beleza natural com segurança.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NOSSOS SERVIÇOS -->
+<section class="section" style="background: #f1f8f3;">
+    <div class="container">
+        <h2 class="section-title">💆 Nossos serviços</h2>
+        <p class="section-sub">Cuidados especializados para você se sentir ainda mais radiante.</p>
+        <div class="grid-3">
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-leaf"></i></div>
+                <h4>Estética facial</h4>
+                <p>Limpeza de pele, hidratação e tratamentos anti-idade com alta tecnologia.</p>
+                <a href="#" class="btn-outline">Saiba mais</a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-hand-peace"></i></div>
+                <h4>Massagens & relaxamento</h4>
+                <p>Técnicas que aliviam tensões, melhoram a circulação e promovem bem-estar profundo.</p>
+                <a href="#" class="btn-outline">Saiba mais</a>
+            </div>
+            <div class="card">
+                <div class="card-icon"><i class="fas fa-paint-brush"></i></div>
+                <h4>Design & cuidados especiais</h4>
+                <p>Design de sobrancelhas, depilação e outros serviços com foco em detalhes.</p>
+                <a href="#" class="btn-outline">Saiba mais</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RODAPÉ PROFISSIONAL -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <h5><i class="fas fa-store"></i> Empresa</h5>
+                <p><i class="fas fa-building"></i> 64.701.645 Maria Eduarda Cotta da Silva Monteiro Marques</p>
+                <p><i class="fas fa-map-pin"></i> Rio de Janeiro, RJ</p>
+                <p><i class="fas fa-calendar-alt"></i> Abertura: 25/01/2026 <span style="display:inline-block; margin-left:6px; background:#1c412f; padding:0 10px; border-radius:30px; font-size:0.7rem;">há 5 meses 19 dias</span></p>
+            </div>
+            <div>
+                <h5><i class="fas fa-file-contract"></i> Dados cadastrais</h5>
+                <p><strong>CNPJ:</strong> 64.701.645/0001-34</p>
+                <p><strong>Porte:</strong> MEI</p>
+                <p><strong>Natureza:</strong> Empresário (Individual)</p>
+                <p><strong>Capital Social:</strong> R$ 1.500,00</p>
+            </div>
+            <div>
+                <h5><i class="fas fa-flag"></i> Situação</h5>
+                <p><i class="fas fa-circle" style="color:#6fbf73; font-size:0.6rem;"></i> <strong>Ativa</strong> · 25/01/2026</p>
+                <p><i class="fas fa-check"></i> Opção MEI: Sim</p>
+                <p><i class="fas fa-check"></i> Opção Simples: Sim (25/01/2026)</p>
+                <p><i class="fas fa-store-alt"></i> Matriz</p>
+            </div>
+            <div>
+                <h5><i class="fas fa-shield-alt"></i> Privacidade</h5>
+                <p><a href="#">Política de Privacidade</a></p>
+                <p><i class="fas fa-lock"></i> Dados protegidos conforme LGPD</p>
+                <p style="margin-top:10px;"><i class="fas fa-phone"></i> (21) 99999-9999</p>
+                <p><i class="fas fa-envelope"></i> contato@mariaeduardaestetica.com</p>
+            </div>
+        </div>
+        <div class="footer-divider">
+            <span><i class="fas fa-copyright"></i> 2026 · Maria Eduarda Cotta · Todos os direitos reservados</span>
+            <span><i class="fas fa-certificate"></i> Empresa privada · CNPJ 64.701.645/0001-34</span>
+        </div>
+    </div>
+</footer>
+
+<!-- NOTA: empresa privada visível no topo e rodapé, sem menção a órgão público -->
+<!-- imagens ilustrativas: hero com overlay e cards com ícones. design robusto -->
+</body>
+</html>
